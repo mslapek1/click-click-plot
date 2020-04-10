@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="863.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.Controller">
+  <tabs>
+    <Tab text="Data">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="863.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+
+                          <MenuItem fx:id="menuOpenFile" onAction="#open" text="Open file" />
+                              <MenuItem fx:id="menuSaveAs" onAction="#saveAs" text="Save as" />
+                              <MenuItem fx:id="menuSave" onAction="#save" text="Save" />
+                              <MenuItem onAction="#quit" text="Quit" />
+                        </items>
+                           <accelerator>
+                              <KeyCodeCombination alt="ANY" code="A" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Edit">
+                        <items>
+                          <MenuItem fx:id="menuUndo" onAction="#undo" text="Undo" />
+                              <MenuItem fx:id="menuRedo" onAction="#redo" text="Redo" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Dataframe">
+                        <items>
+                          <MenuItem fx:id="menuDeleteColumn" mnemonicParsing="false" onAction="#deleteColumn" text="Delete Column" />
+                              <MenuItem mnemonicParsing="false" onAction="#renameColumn" text="Rename Column" />
+                              <MenuItem mnemonicParsing="false" onAction="#sortAscending" text="Sort Ascending" />
+                              <MenuItem mnemonicParsing="false" onAction="#sortDescending" text="Sort Descending" />
+                        </items>
+                      </Menu>
+                        <Menu mnemonicParsing="false" text="About">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
+                           </items>
+                        </Menu>
+                    </menus>
+                  </MenuBar>
+                  <TableView fx:id="table" layoutX="11.0" layoutY="31.0" prefHeight="459.0" prefWidth="842.0" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Plot">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <MenuBar layoutY="2.0" prefHeight="26.0" prefWidth="863.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                          <MenuItem fx:id="plotOpenFile" mnemonicParsing="false" onAction="#open" text="Open file" />
+                              <MenuItem fx:id="menuPlotSaveAs" mnemonicParsing="false" onAction="#saveAs" text="Save as" />
+                              <MenuItem fx:id="menuPlotSave" mnemonicParsing="false" onAction="#save" text="Save" />
+                              <MenuItem mnemonicParsing="false" onAction="#quit" text="Quit" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Plot">
+                        <items>
+                          <MenuItem fx:id="exportAs" mnemonicParsing="false" onAction="#exportAs" text="Export as" />
+                        </items>
+                      </Menu>
+                        <Menu mnemonicParsing="false" text="About">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
+                           </items>
+                        </Menu>
+                    </menus>
+                  </MenuBar>
+                  <TabPane layoutY="31.0" prefHeight="424.0" prefWidth="228.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Aes">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="378.0" prefWidth="228.0">
+                                 <children>
+                                    <Pane layoutX="6.0" prefHeight="386.0" prefWidth="224.0">
+                                       <children>
+                                          <ChoiceBox fx:id="aesX" layoutX="14.0" layoutY="40.0" prefHeight="26.0" prefWidth="169.0" />
+                                          <ChoiceBox fx:id="aesY" layoutX="14.0" layoutY="120.0" prefHeight="26.0" prefWidth="169.0" />
+                                          <Text layoutX="16.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X:">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Text>
+                                          <Text layoutX="17.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Y:">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Text>
+                                          <ChoiceBox fx:id="aesSize" layoutX="14.0" layoutY="200.0" prefHeight="26.0" prefWidth="169.0" />
+                                          <Text layoutX="12.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Size:">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Geom">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Pane layoutX="6.0" layoutY="6.0" prefHeight="429.0" prefWidth="223.0">
+                                       <children>
+                                          <RadioButton fx:id="geomLine" layoutX="14.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="181.0" text="Line plot">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="choicer" />
+                                             </toggleGroup>
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></RadioButton>
+                                          <RadioButton fx:id="geomScatter" layoutX="14.0" layoutY="104.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="173.0" text="Scatter plot" toggleGroup="$choicer">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></RadioButton>
+                                          <RadioButton fx:id="geomPie" layoutX="14.0" layoutY="69.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="164.0" text="Pie chart" toggleGroup="$choicer">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></RadioButton>
+                                          <RadioButton fx:id="geomArea" layoutX="14.0" layoutY="137.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="175.0" text="Area plot" toggleGroup="$choicer">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></RadioButton>
+                                          <RadioButton fx:id="geomBar" layoutX="14.0" layoutY="33.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="173.0" text="Bar plot" toggleGroup="$choicer">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></RadioButton>
+                                          <RadioButton fx:id="geomBubble" layoutX="14.0" layoutY="168.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="165.0" text="Bubble plot" toggleGroup="$choicer">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></RadioButton>
+                                       </children>
+                                    </Pane>
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab text="Other">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="plotTitleField" layoutX="12.0" layoutY="43.0" prefHeight="26.0" prefWidth="204.0" text="Title">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Text layoutX="14.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Plot title" wrappingWidth="102.259765625">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Text>
+                                 </children></AnchorPane>
+                          </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+                  <HBox fx:id="plotPane" alignment="CENTER" layoutX="228.0" layoutY="64.0" prefHeight="432.0" prefWidth="634.0" />
+                  <Button layoutX="14.0" layoutY="455.0" mnemonicParsing="false" onMouseClicked="#generatePlot" text="Generate plot" />
+                  <Button fx:id="nextPlotButton" layoutX="799.0" layoutY="38.0" mnemonicParsing="false" onMouseClicked="#nextPlot" text=" ▶" />
+                  <Button fx:id="deletePlotButton" layoutX="728.0" layoutY="38.0" mnemonicParsing="false" onMouseClicked="#deletePlot" text="Delete" />
+                  <Button fx:id="prevPlotButton" layoutX="686.0" layoutY="38.0" mnemonicParsing="false" onMouseClicked="#prevPlot" text="◀ " />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
